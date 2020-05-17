@@ -1,0 +1,20 @@
+// Light Mode (default)
+$theme-colors: (
+  "brand": #e30613,
+  "primary": #0f47af,
+  "secondary": #fcdd09
+);
+
+// Dark Mode
+$dark-brand: #0f47af;
+$dark-body-bg: #242526;
+$dark-bg-alt: #18191a;
+$dark-body-color: #fff;
+$dark-primary: #fcdd09;
+$dark-secondary: #e30613;
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+// Fonts
+$jetbrains: "JetBrainsMono", monospace;
+$inter: "Inter", sans-serif;

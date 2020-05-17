@@ -1,0 +1,47 @@
+@import "src/scss/variables.scss";
+
+#___gatsby {
+  min-height: 100vh;
+  font-family: $inter;
+
+  header {
+    font-family: $jetbrains;
+    .navbar-dark .navbar-nav .nav-link {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 1.2rem;
+      &:hover, &:active, &.active {
+        color: rgba(255, 255, 255, 1);
+      }
+    }
+    .navbar-brand {
+      display: block;
+      background-image: url("../images/burgbits-castle-w-bg.svg");
+      height: 30px;
+      width: 30px;
+      @include media-breakpoint-up(lg) {
+        background-image: url("../images/burgbits-logo-w-bg.svg");
+        height: 52.5px;
+        width: 200px;
+        margin-left: -8px;
+      }
+      span {
+        display: none;
+      }
+    }
+  }
+
+  #gatsby-focus-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    main {
+      flex: 1;
+
+      p,
+      ul {
+        font-weight: 100;
+      }
+    }
+  }
+}
