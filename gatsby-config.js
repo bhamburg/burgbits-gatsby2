@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `BurgBits`,
-    description: `Brian Hamburg's homepage`,
+    description: `Brian Hamburg is a web developer, designer, and musician in Philadephia, PA`,
     author: `Brian Hamburg`,
   },
   plugins: [
