@@ -3,14 +3,28 @@
 #___gatsby {
   min-height: 100vh;
   font-family: $inter;
-
+  .jumbotron {
+    background-color: transparent;
+  }
+  h1 {
+    font-weight: 900;
+    text-transform: uppercase;
+    &.bigtext {
+      @include media-breakpoint-up(lg) {
+        font-size: 5rem;
+      }
+    }
+  }
   header {
     font-family: $jetbrains;
-    .navbar-dark .navbar-nav .nav-link {
-      color: rgba(255, 255, 255, 0.75);
-      font-size: 1.2rem;
-      &:hover, &:active, &.active {
-        color: rgba(255, 255, 255, 1);
+    .navbar-dark { 
+      box-shadow: 0 0 3rem rgba(0,0,0,0.75);
+      .navbar-nav .nav-link {
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 1.2rem;
+        &:hover, &:active, &.active {
+          color: rgba(255, 255, 255, 1);
+        }
       }
     }
     .navbar-brand {
@@ -29,19 +43,15 @@
       }
     }
   }
-
-  #gatsby-focus-wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-
-    main {
-      flex: 1;
-
-      p,
-      ul {
-        font-weight: 100;
-      }
+  .circle-photo {
+    border-radius: 50%;
+    border: .5rem solid $white;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.75);
+    margin: auto;
+    max-width: 50vw;
+    @include media-breakpoint-up(lg) {
+      border-width: .75rem;
+      max-width: unset;
     }
   }
 }
