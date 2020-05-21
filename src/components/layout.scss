@@ -1,21 +1,55 @@
 @import "src/scss/variables.scss";
 
+html,body {
+  background-color: $dark;
+}
+
+// react-headroom
+.headroom {
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+.headroom--unfixed {
+  position: relative;
+  transform: translateY(0);
+}
+.headroom--scrolled {
+  transition: transform 200ms ease-in-out;
+}
+.headroom--unpinned {
+  position: fixed;
+  transform: translateY(-105%);
+}
+.headroom--pinned {
+  position: fixed;
+  transform: translateY(0%);
+}
+
 #___gatsby {
   min-height: 100vh;
   font-family: $inter;
-  .jumbotron {
-    background-color: transparent;
+  section, footer {
+    padding: 2rem 0;
+    @include media-breakpoint-up(md) {
+      padding: 3rem 0;
+    }
+    @include media-breakpoint-up(lg) {
+      padding: 4rem 0;
+    }
   }
-  h1 {
+  h1, h2 {
     font-weight: 900;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     &.bigtext {
+      font-size: 2.75rem;
       @include media-breakpoint-up(xl) {
         font-size: 5rem;
       }
     }
   }
-  header {
+  header, footer {
     font-family: $jetbrains;
     .navbar-dark { 
       box-shadow: 0 0 3rem rgba(0,0,0,0.75);
