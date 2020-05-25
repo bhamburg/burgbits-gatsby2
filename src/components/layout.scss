@@ -39,31 +39,32 @@ html,body {
       padding: 4rem 0;
     }
   }
+  .jumbotron {
+    background-color: rgba(25,25,25,0.9);
+  }
   h1, h2 {
     font-weight: 900;
     // text-transform: uppercase;
     &.bigtext {
       font-size: 2.75rem;
       @include media-breakpoint-up(xl) {
-        font-size: 5rem;
+        font-size: 6rem;
       }
     }
   }
-  header, footer {
+  .navbar {
     font-family: $jetbrains;
-    .navbar-dark { 
-      box-shadow: 0 0 3rem rgba(0,0,0,0.75);
-      .navbar-toggler {
-        color: $white;
-        padding: 0;
-        border: none;
-      }
-      .navbar-nav .nav-link {
-        color: rgba(255, 255, 255, 0.75);
-        font-size: 1.2rem;
-        &:hover, &:active, &.active {
-          color: rgba(255, 255, 255, 1);
-        }
+    box-shadow: 0 0 3rem rgba(0,0,0,0.75);
+    .navbar-toggler {
+      color: $white;
+      padding: 0;
+      border: none;
+    }
+    .navbar-nav .nav-link {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 1.2rem;
+      &:hover, &:active, &.active {
+        color: rgba(255, 255, 255, 1);
       }
     }
     .navbar-brand {
@@ -92,5 +93,8 @@ html,body {
       border-width: .75rem;
       max-width: unset;
     }
+  }
+  footer {
+    font-family: $jetbrains;
   }
 }

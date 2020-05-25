@@ -1,16 +1,29 @@
 module.exports = {
   siteMetadata: {
     title: `BurgBits`,
-    description: `Brian Hamburg is a web developer, designer, and musician in Philadephia, PA`,
+    description: `Brian Hamburg is a web developer, designer, and musician`,
     author: `Brian Hamburg`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blog`,
+        path: `${__dirname}/posts`,
       },
     },
     `gatsby-plugin-sass`,
