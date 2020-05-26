@@ -1,0 +1,100 @@
+@import "src/scss/variables.scss";
+
+// react-headroom
+.headroom {
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+.headroom--unfixed {
+  position: relative;
+  transform: translateY(0);
+}
+.headroom--scrolled {
+  transition: transform 200ms ease-in-out;
+}
+.headroom--unpinned {
+  position: fixed;
+  transform: translateY(-105%);
+}
+.headroom--pinned {
+  position: fixed;
+  transform: translateY(0%);
+}
+
+// global styles
+html,body {
+  background-color: $dark;
+}
+#___gatsby {
+  min-height: 100vh;
+  font-family: $inter;
+  section, footer {
+    padding: 2rem 0;
+    @include media-breakpoint-up(md) {
+      padding: 3rem 0;
+    }
+    @include media-breakpoint-up(lg) {
+      padding: 4rem 0;
+    }
+  }
+  .jumbotron {
+    background-color: rgba(25,25,25,0.9);
+  }
+  h1, h2 {
+    font-weight: 900;
+    // text-transform: uppercase;
+    &.bigtext {
+      font-size: 2.75rem;
+      @include media-breakpoint-up(xl) {
+        font-size: 6rem;
+      }
+    }
+  }
+  .navbar {
+    font-family: $jetbrains;
+    box-shadow: 0 0 3rem rgba(0,0,0,0.75);
+    .navbar-toggler {
+      color: $white;
+      padding: 0;
+      border: none;
+    }
+    .navbar-nav .nav-link {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 1.2rem;
+      &:hover, &:active, &.active {
+        color: rgba(255, 255, 255, 1);
+      }
+    }
+    .navbar-brand {
+      display: block;
+      background-image: url("../images/burgbits-castle-w-bg.svg");
+      height: 30px;
+      width: 30px;
+      @include media-breakpoint-up(lg) {
+        background-image: url("../images/burgbits-logo-w-bg.svg");
+        height: 52.5px;
+        width: 200px;
+        margin-left: -8px;
+      }
+      span {
+        display: none;
+      }
+    }
+  }
+  .circle-photo {
+    border-radius: 50%;
+    border: .5rem solid $white;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.75);
+    margin: auto;
+    max-width: 50vw;
+    @include media-breakpoint-up(lg) {
+      border-width: .75rem;
+      max-width: unset;
+    }
+  }
+  footer {
+    font-family: $jetbrains;
+  }
+}
