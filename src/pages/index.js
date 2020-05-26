@@ -63,7 +63,7 @@ const IndexPage = () => {
             {data.allMdx.nodes.map(({ excerpt, frontmatter }, index) => {
               if (index == 0) return (
                 <Col md={6} xl={4} className="mb-5">
-                  <Card as="a" className="shadow-sm h-100" href="#!">
+                  <Card as="a" className="lift h-100" href="#!">
                     <Card.Img variant="top" src="https://source.unsplash.com/KE0nC8-58MQ/660x360" alt={frontmatter.title} />
                     <Card.Body>
                       <Card.Title>{frontmatter.title}</Card.Title>
@@ -81,7 +81,7 @@ const IndexPage = () => {
             {data.allMdx.nodes.map(({ excerpt, frontmatter }, index) => {
               if (0 < index && index < 4) return (
                 <Col md={6} xl={4} className="mb-5">
-                  <Card as="a" className="shadow-sm h-100" href="#!">
+                  <Card as="a" className="lift h-100" href="#!">
                     <Card.Img variant="top" src="https://source.unsplash.com/KE0nC8-58MQ/660x360" alt={frontmatter.title} />
                     <Card.Body>
                       <Card.Title>{frontmatter.title}</Card.Title>
