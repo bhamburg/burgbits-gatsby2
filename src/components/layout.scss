@@ -1,9 +1,5 @@
 @import "src/scss/variables.scss";
 
-html,body {
-  background-color: $dark;
-}
-
 // react-headroom
 .headroom {
   top: 0;
@@ -27,6 +23,10 @@ html,body {
   transform: translateY(0%);
 }
 
+// global styles
+html,body {
+  background-color: $dark;
+}
 #___gatsby {
   min-height: 100vh;
   font-family: $inter;
