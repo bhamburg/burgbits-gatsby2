@@ -1,6 +1,5 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
 import { Container, Row, Button, Col, Card, ButtonGroup } from "react-bootstrap"
 
 import Layout from "../components/layout"
@@ -38,7 +37,7 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Welcome" />
       <Header 
-        title="Hi, I'm Brian."
+        title="Hi, I’m Brian."
         subtitle="I’m a web developer, designer, and musician."
         text="This is my portfolio of technical and creative work, 
         as well as musings on a variety of hobbies and interests."

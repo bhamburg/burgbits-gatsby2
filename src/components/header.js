@@ -51,11 +51,14 @@ const Header = ({ title, subtitle, text, img }) => {
 }
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+  title: PropTypes.string,
+  subtitle: PropTypes.string, 
+  text: PropTypes.string, 
+  img: PropTypes.string,
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+  title: `[]`,
 }
 
 export default Header
