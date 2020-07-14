@@ -15,12 +15,18 @@
   transition: transform 200ms ease-in-out;
 }
 .headroom--unpinned {
-  position: fixed;
-  transform: translateY(-105%);
+  position: relative;
+  @include media-breakpoint-up(sm) {
+    position: fixed;
+    transform: translateY(-105%);
+  }
 }
 .headroom--pinned {
-  position: fixed;
-  transform: translateY(0%);
+  position: relative;
+  @include media-breakpoint-up(sm) {
+    position: fixed;
+    transform: translateY(0%);
+  }
 }
 
 // global styles
@@ -39,16 +45,27 @@ html,body {
       padding: 4rem 0;
     }
   }
-  .jumbotron {
-    background-color: rgba(25,25,25,0.9);
-  }
   h1, h2 {
     font-weight: 900;
-    // text-transform: uppercase;
     &.bigtext {
       font-size: 2.75rem;
       @include media-breakpoint-up(xl) {
         font-size: 6rem;
+      }
+    }
+  }
+  .jumbotron {
+    background-color: rgba(25,25,25,0.9);
+    .h2 {
+      font-size: 1.75rem;
+      @include media-breakpoint-up(xl) {
+        font-size: 2rem;
+      }
+    }
+    .h3 {
+      font-size: 1.5rem;
+      @include media-breakpoint-up(xl) {
+        font-size: 1.75rem;
       }
     }
   }
@@ -80,6 +97,14 @@ html,body {
       }
       span {
         display: none;
+      }
+    }
+    .navbar-social {
+      display: flex;
+        @include media-breakpoint-down(sm) {
+        justify-content: space-evenly;
+        background-color: rgba(0,0,0,0.1);
+        margin: 0 -16px -8px;
       }
     }
   }

@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 import Header from "../components/header"
 import SEO from "../components/seo"
 
-const SecondPage = (props: PageProps) => (
+const SecondPage = props => (
   <Layout>
     <SEO title="Uses" />
     <Header 

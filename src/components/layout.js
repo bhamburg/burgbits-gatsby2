@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
       </Headroom>
       {children}
       <footer className="bg-dark text-white">
-        <Container>
+        <Container className="text-center">
           Copyright © {new Date().getFullYear()} Brian Hamburg
         </Container>
       </footer>
