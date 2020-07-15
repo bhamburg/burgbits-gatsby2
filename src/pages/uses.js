@@ -1,21 +1,28 @@
-// Gatsby supports TypeScript natively!
 import React from "react"
-import { PageProps, Link } from "gatsby"
+import { Link } from "gatsby"
+import { Container, Row, Button, Col } from "react-bootstrap"
 
 import Layout from "../components/layout"
 import Header from "../components/header"
 import SEO from "../components/seo"
 
-const SecondPage = props => (
+const UsesPage = props => (
   <Layout>
-    <SEO title="Uses" />
+    <SEO title="/uses" />
     <Header 
-      title="Uses"
-      subtitle="These are things that I use."
+      title="/uses"
+      text="Tools and tech that I use."
     />
-    <p>Welcome to page 2 ({props.path})</p>
-    <Link to="/">Go back to the homepage</Link> 
+    <main>
+      <section className="bg-white" id="uses">
+        <Container>
+          <Row>
+            Uses
+          </Row>
+        </Container>
+      </section>
+    </main>
   </Layout>
 )
 
-export default SecondPage
+export default UsesPage

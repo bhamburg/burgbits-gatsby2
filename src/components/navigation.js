@@ -11,16 +11,16 @@ const Navigation = ({ siteTitle }) => (
       </Navbar.Brand>
     </Link>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
-    <Navbar.Collapse id="basic-navbar-nav">
+    <Navbar.Collapse id="main-nav">
       <Nav className="ml-auto">
+        <Link activeClassName="active" className="nav-link" to="/about">
+          /about
+        </Link>
         <Link activeClassName="active" className="nav-link" to="/work">
           /work
         </Link>
         <Link activeClassName="active" className="nav-link" to="/blog">
           /blog
-        </Link>
-        <Link activeClassName="active" className="nav-link" to="/about">
-          /about
         </Link>
         <Link activeClassName="active" className="nav-link" to="/uses">
           /uses

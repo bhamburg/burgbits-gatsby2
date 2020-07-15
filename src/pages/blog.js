@@ -6,12 +6,12 @@ import Layout from "../components/layout"
 import Header from "../components/header"
 import SEO from "../components/seo"
 
-const NotFoundPage = props => (
+const BlogPage = props => (
   <Layout>
-    <SEO title="404 Page Not Found" />
+    <SEO title="Blog Posts" />
     <Header 
-      title="Page Not Found"
-      text="Not all who wander are lost, but you are."
+      title="Blog Posts"
+      text="Brian’s brain droppings."
     />
     <main>
       <section className="bg-white" id="uses">
@@ -25,4 +25,4 @@ const NotFoundPage = props => (
   </Layout>
 )
 
-export default NotFoundPage
+export default BlogPage

@@ -16,14 +16,14 @@
 }
 .headroom--unpinned {
   position: relative;
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(md) {
     position: fixed;
     transform: translateY(-105%);
   }
 }
 .headroom--pinned {
   position: relative;
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(md) {
     position: fixed;
     transform: translateY(0%);
   }
@@ -31,7 +31,7 @@
 
 // global styles
 html,body {
-  background-color: $secondary;
+  background-color: $dark;
 }
 #___gatsby {
   min-height: 100vh;
@@ -56,6 +56,10 @@ html,body {
   }
   .jumbotron {
     background-color: rgba(25,25,25,0.9);
+    text-align: center;
+    @include media-breakpoint-up(md) {
+      text-align: unset;
+    }
     .h2 {
       font-size: 1.5rem;
       @include media-breakpoint-up(xl) {
@@ -103,8 +107,8 @@ html,body {
       display: flex;
       @include media-breakpoint-down(sm) {
         justify-content: space-evenly;
-        background-color: rgba(0,0,0,0.2);
-        margin: 0 -16px -8px;
+        background-color: rgba(0,0,0,0.1);
+        margin: 0 -1rem -0.5rem;
       }
     }
   }
@@ -135,19 +139,22 @@ html,body {
     flex-direction: row;
     flex-wrap: wrap;
     img.card-img-top {
-      flex-basis: 50%;
+      width: 50%;
       border-top-right-radius: unset;
     }
     .card-title {
       font-size: 2.5rem;
     }
     .card-body {
-      flex-basis: 50%;
+      width: 50%;
     }
     .card-footer {
       flex-basis: 100%;
     }
   }
+}
+.card-footer {
+  font-family: $jetbrains;
 }
 
 .lift {
