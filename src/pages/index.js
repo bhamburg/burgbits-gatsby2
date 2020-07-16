@@ -18,7 +18,14 @@ const IndexPage = () => {
           }
         }
       }
-      aboutRowImage: file(relativePath: { eq: "love-phila.jpg" }) {
+      lovePhila: file(relativePath: { eq: "love-phila.jpg" }) {
+        childImageSharp {
+          sizes(quality: 100) {
+            ...GatsbyImageSharpSizes_withWebp
+          }
+        }
+      }
+      shades: file(relativePath: { eq: "with-fralinger-shades.jpg" }) {
         childImageSharp {
           sizes(quality: 100) {
             ...GatsbyImageSharpSizes_withWebp
@@ -58,15 +65,28 @@ const IndexPage = () => {
         <section className="bg-white" id="about">
           <Container>
             <Row>
-              <Col xs={6} md={4}>
-                <Img fluid={data.aboutRowImage.childImageSharp.sizes} className="rounded" />
+              <Col sm={6} lg={3}>
+                <Link to="/about">
+                  <Img fluid={data.lovePhila.childImageSharp.sizes} className="fluid rounded" />
+                </Link>
+              </Col>
+              <Col sm={6} lg={3}>
+                <Link to="/about">
+                  <Img fluid={data.shades.childImageSharp.sizes} className="fluid rounded" />
+                </Link>
               </Col>
               <Col>
-                <h2>About Brian Hamburg</h2>
+                <h2>
+                  <Link to="/about" className="text-dark">
+                    Who is this Hamburg character anyway?
+                  </Link>
+                </h2>
                 <p>
-                  So who is this character anyway? Playing four-string banjo is just the tip of the Hamburg iceberg. 
-                  I'm also a retro gaming enthusiast, avid science and philosphy reader, and slightly less-avid runner.
+                  Making websites and playing four-string banjo is just the tip of the Brian Hamburg iceberg.
                 </p>
+                <Link to="/about" className="btn btn-dark">
+                  {`Read More About Brian =>`}
+                </Link>
               </Col>
             </Row>
           </Container>
@@ -90,10 +110,14 @@ const IndexPage = () => {
                     <Card as="a" className="lift featured-post" href={fields.slug} title={`Blog Post: ${frontmatter.title}`}>
                       <Card.Img variant="top" src="https://source.unsplash.com/KE0nC8-58MQ/660x360" alt={frontmatter.title} />
                       <Card.Body>
-                        <h3 className="card-title">{frontmatter.title}</h3>
-                        <Card.Text>{frontmatter.description || excerpt}</Card.Text>
+                        <h3 className="card-title">
+                          {frontmatter.title}
+                        </h3>
+                        <Card.Text>
+                          {frontmatter.description || excerpt}
+                        </Card.Text>
                       </Card.Body>
-                      <Card.Footer className="text-muted d-flex justify-content-center align-content-center">
+                      <Card.Footer className="d-flex justify-content-center align-content-center">
                         <svg xmlns="http://www.w3.org/2000/svg" height="1.4em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                           <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
                           <line x1="16" y1="2" x2="16" y2="6"/>
@@ -121,7 +145,7 @@ const IndexPage = () => {
                         <h3 className="card-title">{frontmatter.title}</h3>
                         <Card.Text>{frontmatter.description || excerpt}</Card.Text>
                       </Card.Body>
-                      <Card.Footer className="text-muted d-flex justify-content-center align-content-center">
+                      <Card.Footer className="d-flex justify-content-center align-content-center">
                         <svg xmlns="http://www.w3.org/2000/svg" height="1.4em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                           <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
                           <line x1="16" y1="2" x2="16" y2="6"/>
@@ -136,8 +160,8 @@ const IndexPage = () => {
               )}
             </Row>
             <div className="text-center mt-5">
-              <Link to="/blog" className="btn btn-secondary btn-lg">
-                {`Read More =>`}
+              <Link to="/blog" className="btn btn-dark btn-lg">
+                {`Read More Posts =>`}
               </Link>
             </div>
           </Container>

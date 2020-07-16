@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import { Nav, Navbar } from "react-bootstrap"
 
 const Navigation = ({ siteTitle }) => (
-  <Navbar bg="brand" variant="dark" expand="md">
+  <Navbar bg="primary" variant="dark" expand="md">
     <Link to="/">
       <Navbar.Brand>
         <span>{siteTitle}</span>
