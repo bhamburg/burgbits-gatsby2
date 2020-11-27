@@ -82,6 +82,9 @@ const IndexPage = () => {
                   </Link>
                 </h2>
                 <p>
+                  <i>Father of twins. Strummer of strings. Wrangler of the Web. Implementer of interfaces. Purveyor of pixels.</i>
+                </p>
+                <p>
                   Making websites and playing four-string banjo is just the tip of the Brian Hamburg iceberg.
                 </p>
                 <Link to="/about" className="btn btn-dark">

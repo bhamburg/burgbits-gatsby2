@@ -140,6 +140,7 @@ html,body {
     flex-wrap: wrap;
     img.card-img-top {
       width: 50%;
+      height: min-intrinsic;   // Safari fix
       border-top-right-radius: unset;
     }
     .card-title {
