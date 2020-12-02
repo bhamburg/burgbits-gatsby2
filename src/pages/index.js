@@ -88,7 +88,7 @@ const IndexPage = () => {
                   Making websites and playing four-string banjo is just the tip of the Brian Hamburg iceberg.
                 </p>
                 <Link to="/about" className="btn btn-dark">
-                  {`Read More About Brian =>`}
+                  {`Read More =>`}
                 </Link>
               </Col>
             </Row>
@@ -109,7 +109,7 @@ const IndexPage = () => {
             <Row>
               {data.allMdx.nodes.map(({ excerpt, frontmatter, fields }, index) => {
                 return index === 0 && (
-                  <Col md={{ span: 10, offset: 1 }} key={index}>
+                  <Col xl={{ span: 10, offset: 1 }} key={index}>
                     <Card as="a" className="lift featured-post" href={fields.slug} title={`Blog Post: ${frontmatter.title}`}>
                       <Card.Img variant="top" src="https://source.unsplash.com/KE0nC8-58MQ/660x360" alt={frontmatter.title} />
                       <Card.Body>
@@ -164,7 +164,7 @@ const IndexPage = () => {
             </Row>
             <div className="text-center mt-5">
               <Link to="/blog" className="btn btn-dark btn-lg">
-                {`Read More Posts =>`}
+                {`More Posts =>`}
               </Link>
             </div>
           </Container>

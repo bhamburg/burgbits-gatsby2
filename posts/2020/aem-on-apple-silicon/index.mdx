@@ -1,0 +1,22 @@
+---
+title: AEM Development on Apple Silicon
+date: 2020-12-01
+description: >-
+  There are pros and cons to being an early adopter of Apple's newest hardware, 
+  but there are mostly pros, even if you opt for the MacBook Air. This is my experience 
+  making it my daily driver.
+published: true
+---
+
+AEM Development Environment on Apple Silicon
+
+- Install JDK 8 for Apple Silicon from https://www.azul.com/downloads/zulu-community/?package=jdk
+- Set $JAVA_HOME in ~/.zshrc
+    - JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu8.50.0.1017-ca-jdk8.0.275-macos_aarch64
+    - export JAVA_HOME;
+- Install Homebrew for Rosetta 2 (https://soffes.blog/homebrew-on-apple-silicon)
+- Install Maven via Homebrew for Rosetta 2 
+    - arch -x86_64 brew install maven
+- Set alias to AEM quickstart in ~/.zshrc
+    - alias aem='java -jar /Users/burgbits/AEM/6.5/AEM_6.5_Quickstart.jar'
+
