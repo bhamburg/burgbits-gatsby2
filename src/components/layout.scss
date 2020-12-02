@@ -138,7 +138,7 @@ html,body {
   @include media-breakpoint-up(lg) {
     flex-direction: row;
     flex-wrap: wrap;
-    img.card-img-top {
+    .card-img-top {
       width: 50%;
       height: min-intrinsic;   // Safari fix
       border-top-right-radius: unset;
