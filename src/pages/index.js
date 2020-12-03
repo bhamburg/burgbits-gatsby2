@@ -1,12 +1,11 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import { Container, Row, Button, Col, Card } from "react-bootstrap"
+import { Container, Row, Col, Card } from "react-bootstrap"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Header from "../components/header"
-import Dump from "../components/Dump"
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -44,6 +43,13 @@ const IndexPage = () => {
             date(formatString: "MMMM D, YYYY")
             description
             featuredImage {
+              childImageSharp {
+                sizes(quality: 100) {
+                  ...GatsbyImageSharpSizes_withWebp
+                }
+              }
+            }
+            thumbnail {
               childImageSharp {
                 sizes(quality: 100) {
                   ...GatsbyImageSharpSizes_withWebp
@@ -111,14 +117,15 @@ const IndexPage = () => {
         </section>
         <section className="bg-light" id="recently-written">
           <Container>
-            <h2 className="mb-5">Latest Posts</h2>
+            <h2 className="mb-4">Latest Posts</h2>
             <Row className="mb-5">
               {data.allMdx.nodes.map(({ excerpt, frontmatter, fields }, index) => {
                 return index === 0 && (
                   <Col xl={{ span: 10, offset: 1 }} key={index}>
                     <Card as="a" className="lift featured-post" href={fields.slug} title={`Blog Post: ${frontmatter.title}`}>
-                      {frontmatter.featuredImage && <Img fluid={frontmatter.featuredImage.childImageSharp.sizes} className="fluid card-img-top" alt={frontmatter.title} /> }
-                      {!frontmatter.featuredImage &&  <Card.Img variant="top" src="https://source.unsplash.com/KE0nC8-58MQ/660x360" alt={frontmatter.title} />}
+                        {frontmatter.thumbnail && <Img fluid={frontmatter.thumbnail.childImageSharp.sizes} className="fluid card-img-top" alt={frontmatter.title} />} 
+                        {!frontmatter.thumbnail && frontmatter.featuredImage && <Img fluid={frontmatter.featuredImage.childImageSharp.sizes} className="fluid card-img-top" alt={frontmatter.title} />} 
+                        {!frontmatter.thumbnail && !frontmatter.featuredImage && <Card.Img variant="top" src="https://source.unsplash.com/KE0nC8-58MQ/660x360" alt={frontmatter.title} />}
                       <Card.Body>
                         <h3 className="card-title">
                           {frontmatter.title}
@@ -146,8 +153,9 @@ const IndexPage = () => {
                 return (0 < index && index < 4) && (
                   <Col md={6} xl={4} key={index}>
                     <Card as="a" className="lift h-100" href={fields.slug} title={`Blog Post: ${frontmatter.title}`}>
-                      {frontmatter.featuredImage && <Img fluid={frontmatter.featuredImage.childImageSharp.sizes} className="fluid rounded card-img-top" alt={frontmatter.title} />}
-                      {!frontmatter.featuredImage && <Card.Img variant="top" src="https://source.unsplash.com/KE0nC8-58MQ/660x360" alt={frontmatter.title} />}
+                        {frontmatter.thumbnail && <Img fluid={frontmatter.thumbnail.childImageSharp.sizes} className="fluid card-img-top" alt={frontmatter.title} />} 
+                        {!frontmatter.thumbnail && frontmatter.featuredImage && <Img fluid={frontmatter.featuredImage.childImageSharp.sizes} className="fluid card-img-top" alt={frontmatter.title} />} 
+                        {!frontmatter.thumbnail && !frontmatter.featuredImage && <Card.Img variant="top" src="https://source.unsplash.com/KE0nC8-58MQ/660x360" alt={frontmatter.title} />}
                       <Card.Body>
                         <h3 className="card-title">{frontmatter.title}</h3>
                         <Card.Text>{frontmatter.description || excerpt}</Card.Text>

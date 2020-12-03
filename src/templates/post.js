@@ -3,8 +3,8 @@ import { graphql } from "gatsby"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { Link } from "gatsby"
-import { Container, Row, Button, Col, Card, ButtonGroup } from "react-bootstrap"
-
+import { Container, Row, Col} from "react-bootstrap"
+import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Header from "../components/header"
@@ -21,9 +21,21 @@ export default function PageTemplate({ data: { mdx } }) {
         <main>
             <section className="bg-white" id="post-body">
                 <Container>
-                    <MDXProvider components={shortcodes}>
-                        <MDXRenderer>{mdx.body}</MDXRenderer>
-                    </MDXProvider>
+                  <Row>
+                    <Col xl={{ span: 6, offset: 3 }} className="mb-4">
+                      <figure className="figure" style={{ width: '100%' }}>
+                        {mdx.frontmatter.featuredImage && <Img fluid={mdx.frontmatter.featuredImage.childImageSharp.sizes} className="figure-img img-fluid rounded" alt={mdx.frontmatter.caption} />}
+                        {mdx.frontmatter.caption && <figcaption className="figure-caption">{mdx.frontmatter.caption}</figcaption>}
+                      </figure>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col xl={{ span: 8, offset: 2 }}>
+                      <MDXProvider components={shortcodes}>
+                          <MDXRenderer>{mdx.body}</MDXRenderer>
+                      </MDXProvider>
+                    </Col>
+                  </Row>
                 </Container>
             </section>
         </main>
@@ -39,6 +51,21 @@ export const pageQuery = graphql`
         title
         date(formatString: "dddd, MMMM D, YYYY")
         description
+        caption
+        featuredImage {
+          childImageSharp {
+            sizes(quality: 100) {
+              ...GatsbyImageSharpSizes_withWebp
+            }
+          }
+        }
+        thumbnail {
+          childImageSharp {
+            sizes(quality: 100) {
+              ...GatsbyImageSharpSizes_withWebp
+            }
+          }
+        }
       }
     }
   }
