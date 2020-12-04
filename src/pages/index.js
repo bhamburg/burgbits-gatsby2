@@ -99,7 +99,7 @@ const IndexPage = () => {
                   This is just the tip of the Brian Hamburg iceberg.
                 </p>
                 <Link to="/about" className="btn btn-dark btn-lg">
-                  {`Read More =>`}
+                  {`Read About Brian`}
                 </Link>
               </Col>
             </Row>
@@ -118,7 +118,7 @@ const IndexPage = () => {
         <section className="bg-light" id="recently-written">
           <Container>
             <h2 className="mb-4">Latest Posts</h2>
-            <Row className="mb-5">
+            <Row className="mb-2">
               {data.allMdx.nodes.map(({ excerpt, frontmatter, fields }, index) => {
                 return index === 0 && (
                   <Col xl={{ span: 10, offset: 1 }} key={index}>
@@ -174,9 +174,9 @@ const IndexPage = () => {
                 )}
               )}
             </Row>
-            <div className="text-center mt-5">
+            <div className="text-center mt-3">
               <Link to="/blog" className="btn btn-dark btn-lg">
-                {`More Posts =>`}
+                {`See All Posts`}
               </Link>
             </div>
           </Container>

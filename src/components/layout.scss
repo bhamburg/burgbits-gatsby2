@@ -129,10 +129,8 @@ html,body {
 }
 
 // cards 
-@include media-breakpoint-down(lg) {
-  div[class^="col-"]:not(:last-of-type) {
-    margin-bottom: 2rem;
-  }
+div[class^="col-"] {
+  margin-bottom: 2rem;
 }
 .card.featured-post {
   @include media-breakpoint-up(lg) {

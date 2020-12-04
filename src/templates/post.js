@@ -20,23 +20,28 @@ export default function PageTemplate({ data: { mdx } }) {
         />
         <main>
             <section className="bg-white" id="post-body">
-                <Container>
-                  <Row>
-                    <Col xl={{ span: 6, offset: 3 }} className="mb-4">
-                      <figure className="figure" style={{ width: '100%' }}>
-                        {mdx.frontmatter.featuredImage && <Img fluid={mdx.frontmatter.featuredImage.childImageSharp.sizes} className="figure-img img-fluid rounded" alt={mdx.frontmatter.caption} />}
-                        {mdx.frontmatter.caption && <figcaption className="figure-caption">{mdx.frontmatter.caption}</figcaption>}
-                      </figure>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col xl={{ span: 8, offset: 2 }}>
-                      <MDXProvider components={shortcodes}>
-                          <MDXRenderer>{mdx.body}</MDXRenderer>
-                      </MDXProvider>
-                    </Col>
-                  </Row>
-                </Container>
+              <Container>
+                <Row>
+                  <Col xl={{ span: 6, offset: 3 }} className="mb-4">
+                    <figure className="figure" style={{ width: '100%' }}>
+                      {mdx.frontmatter.featuredImage && <Img fluid={mdx.frontmatter.featuredImage.childImageSharp.sizes} className="figure-img img-fluid rounded" alt={mdx.frontmatter.caption} />}
+                      {mdx.frontmatter.caption && <figcaption className="figure-caption">{mdx.frontmatter.caption}</figcaption>}
+                    </figure>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xl={{ span: 8, offset: 2 }}>
+                    <MDXProvider components={shortcodes}>
+                        <MDXRenderer>{mdx.body}</MDXRenderer>
+                    </MDXProvider>
+                  </Col>
+                </Row>
+              </Container>
+              <div className="text-center mt-2">
+                <Link to="/blog" className="btn btn-dark btn-lg">
+                  {`Back to Blog Posts`}
+                </Link>
+              </div>
             </section>
         </main>
     </Layout>
