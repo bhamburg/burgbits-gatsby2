@@ -77,7 +77,7 @@ const IndexPage = () => {
       <main>
         <section className="bg-white" id="about">
           <Container>
-            <Row>
+            <Row className="text-center">
               <Col xs={6} lg={3}>
                 <Link to="/about">
                   <Img fluid={data.lovePhila.childImageSharp.sizes} className="fluid rounded" />
@@ -90,10 +90,10 @@ const IndexPage = () => {
               </Col>
               <Col>
                 <h2>
-                  Who is this Hamburg character anyway?
+                  So who is this Hamburg character, anyway?
                 </h2>
                 <p>
-                  <i>Father of twins. Strummer of strings. Wrangler of the Web. Implementer of interfaces. Purveyor of pixels.</i>
+                  <i>Father of twins. Strummer of strings. Wrangler of the Web. Implementer of interfaces. Purveyor of pixels. Never bored.</i>
                 </p>
                 <p>
                   This is just the tip of the Brian Hamburg iceberg.
@@ -105,7 +105,7 @@ const IndexPage = () => {
             </Row>
           </Container>
         </section>
-        <section className="bg-secondary text-white" id="project">
+        {/* <section className="bg-secondary text-white" id="project">
           <Container>
             <h2>Featured Project</h2>
             <Row>
@@ -114,10 +114,10 @@ const IndexPage = () => {
               </Col>
             </Row>
           </Container>
-        </section>
+        </section> */}
         <section className="bg-light" id="recently-written">
           <Container>
-            <h2 className="mb-4">Latest Posts</h2>
+            <h2 className="mb-4 text-center">Latest Posts</h2>
             <Row className="mb-2">
               {data.allMdx.nodes.map(({ excerpt, frontmatter, fields }, index) => {
                 return index === 0 && (
@@ -127,7 +127,7 @@ const IndexPage = () => {
                         {!frontmatter.thumbnail && frontmatter.featuredImage && <Img fluid={frontmatter.featuredImage.childImageSharp.sizes} className="fluid card-img-top" alt={frontmatter.title} />} 
                         {!frontmatter.thumbnail && !frontmatter.featuredImage && <Card.Img variant="top" src="https://source.unsplash.com/KE0nC8-58MQ/660x360" alt={frontmatter.title} />}
                       <Card.Body>
-                        <h3 className="card-title">
+                        <h3 className="card-title text-center">
                           {frontmatter.title}
                         </h3>
                         <Card.Text>
@@ -150,14 +150,14 @@ const IndexPage = () => {
             </Row>
             <Row>
               {data.allMdx.nodes.map(({ excerpt, frontmatter, fields }, index) => {
-                return (0 < index && index < 4) && (
+                return (0 < index && index < 7) && (
                   <Col md={6} xl={4} key={index}>
                     <Card as="a" className="lift h-100" href={fields.slug} title={`Blog Post: ${frontmatter.title}`}>
                         {frontmatter.thumbnail && <Img fluid={frontmatter.thumbnail.childImageSharp.sizes} className="fluid card-img-top" alt={frontmatter.title} />} 
                         {!frontmatter.thumbnail && frontmatter.featuredImage && <Img fluid={frontmatter.featuredImage.childImageSharp.sizes} className="fluid card-img-top" alt={frontmatter.title} />} 
                         {!frontmatter.thumbnail && !frontmatter.featuredImage && <Card.Img variant="top" src="https://source.unsplash.com/KE0nC8-58MQ/660x360" alt={frontmatter.title} />}
                       <Card.Body>
-                        <h3 className="card-title">{frontmatter.title}</h3>
+                        <h3 className="card-title text-center">{frontmatter.title}</h3>
                         <Card.Text>{frontmatter.description || excerpt}</Card.Text>
                       </Card.Body>
                       <Card.Footer className="d-flex justify-content-center">

@@ -62,7 +62,7 @@ const BlogPage = props => {
                         {!frontmatter.thumbnail && frontmatter.featuredImage && <Img fluid={frontmatter.featuredImage.childImageSharp.sizes} className="fluid card-img-top" alt={frontmatter.title} />} 
                         {!frontmatter.thumbnail && !frontmatter.featuredImage && <Card.Img variant="top" src="https://source.unsplash.com/KE0nC8-58MQ/660x360" alt={frontmatter.title} />}
                       <Card.Body>
-                        <h3 className="card-title">{frontmatter.title}</h3>
+                        <h3 className="card-title text-center">{frontmatter.title}</h3>
                         <Card.Text>{frontmatter.description || excerpt}</Card.Text>
                       </Card.Body>
                       <Card.Footer className="d-flex justify-content-center">

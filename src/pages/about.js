@@ -4,7 +4,10 @@ import { Container, Row, Button, Col } from "react-bootstrap"
 
 import Layout from "../components/layout"
 import Header from "../components/header"
+import Goodreads from "../components/goodreads"
 import SEO from "../components/seo"
+
+
 
 const AboutPage = props => {
   const data = useStaticQuery(graphql`
@@ -23,15 +26,20 @@ const AboutPage = props => {
     <SEO title="About" />
     <Header 
       title="About"
-      text="Father of twins. Strummer of strings. Wrangler of the Web. Implementer of interfaces. Purveyor of pixels."
+      text={`Father of twins. Strummer of strings. Wrangler of the Web. Implementer of interfaces. Purveyor of pixels. Never bored.`}
       img={data.aboutImage.childImageSharp.sizes}
     />
     <main>
-      <section className="bg-white" id="uses">
+      <section className="bg-white" id="about">
         <Container>
           <Row>
-            About goes here.
+            <Col>About Brian</Col>
           </Row>
+        </Container>
+      </section>
+      <section className="bg-light" id="reading-list">
+        <Container>
+          <Goodreads />
         </Container>
       </section>
     </main>
