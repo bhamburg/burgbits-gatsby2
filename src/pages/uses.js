@@ -1,16 +1,47 @@
----
-title: /uses
-date: 2020-11-30
-featuredImage: desk.png
-thumbnail: desk-thumb.png
-description: >-
-  Based on Wes Bos's /uses, these are the tools and tech that I use regulary. 
-published: true
----
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import { Container, Row, Col } from "react-bootstrap"
 
-Based on [Wes Bos's](https://wesbos.com) [/uses](https://uses.tech), this is a list of tools and tech I use regularly.
+import Layout from "../components/layout"
+import Header from "../components/header"
+import SEO from "../components/seo"
 
-## Development Environment
+
+
+const UsesPage = props => {
+  const data = useStaticQuery(graphql`
+    query {
+      usesImage: file(relativePath: { eq: "desk.png" }) {
+        childImageSharp {
+          sizes(quality: 100) {
+            ...GatsbyImageSharpSizes_withWebp
+          }
+        }
+      }
+    }
+  `)
+  return (
+  <Layout>
+    <SEO title="Uses" />
+    <Header 
+      title="/uses"
+      text={`Tools and tech that I use regulary.`}
+      img={data.usesImage.childImageSharp.sizes}
+    />
+    <main>
+      <section className="bg-white" id="about">
+        <Container>
+            <Row>
+                <Col xl={{ span: 8, offset: 2 }}>
+                    <h3>Hardware</h3>
+                    <ul>
+                        <li>MacBook Air (M1, Late 2020)</li>
+                        <li><a href="https://pcpartpicker.com/b/Hq9G3C" target="_blank" rel="noopener noreferrer">Custom-built PC</a></li>
+                    </ul>
+                    <h3>Software</h3>
+                    <ul>
+                        <li></li>
+                    </ul>
 [Terminal](https://support.apple.com/guide/terminal/welcome/mac) (Mac) / [Windows Terminal](https://github.com/microsoft/terminal) (PC)
 - [Node.js](https://nodejs.org) / [NPM](https://www.npmjs.com)
 - [Homebrew](https://brew.sh) (Mac)
@@ -70,28 +101,21 @@ Packages and services used by burgbits.com
 
 [iPhone 12](https://www.apple.com/shop/buy-iphone/iphone-12) / [Spigen Liquid Air case](https://www.spigen.com/products/iphone-12-iphone-12-pro-case-liquid-air?variant=32590892597295)
 
-## Gaming Consoles
-FPGA 
-- [MiSTer](https://github.com/MiSTer-devel/Main_MiSTer/wiki)
-- Analogue Super Nt 
-- Analogue Mega Sg
+            </Col>
+          </Row>
+        </Container>
+      </section>
+      <section className="bg-light">
+        <Container>
+          <Row>
+            <Col className="text-center mb-0" xl={{ span: 8, offset: 2 }}>
+              <a href="https://github.com/wesbos/awesome-uses" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">What is a “uses” page?</a>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+    </main>
+  </Layout>
+)}
 
-Sony Playstation
-- PlayStation 5
-- PlayStation 4 Pro
-- PlayStation 3 (Slim)
-
-Nintendo
-- Nintendo Switch
-- Wii U (Super Mario Maker Console Deluxe Set)
-- Wii (25th Anniversary Red Limited Edition)
-- Nintendo 64
-- Super Nintendo Entertainment System
-- Nintendo Entertainment System (Action Set)
-- 3DS XL (Hyrule Edition)
-- DS Lite (Polar White)
-- Game Boy Advance (AGS-001, AGS-101)
-- Game Boy Pocket
-- Game Boy
-
-## 
+export default UsesPage

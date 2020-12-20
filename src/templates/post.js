@@ -38,7 +38,7 @@ export default function PageTemplate({ data: { mdx } }) {
                 </Row>
               </Container>
               <div className="text-center mt-2">
-                <Link to="/blog" className="btn btn-dark btn-lg">
+                <Link to="/blog" className="btn btn-primary btn-lg">
                   {`Back to Blog Posts`}
                 </Link>
               </div>

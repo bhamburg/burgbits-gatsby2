@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { Container, Row, Col, Card } from "react-bootstrap"
 
@@ -47,16 +47,17 @@ const BlogPage = props => {
     <Layout>
       <SEO title="Blog Posts" />
       <Header 
-        title="Blog Posts"
-        text="Brian’s brain droppings."
+        title="/blog"
+        text={["Brian’s ",<abbr title="I am indeed a fan of George Carlin">Brain Droppings</abbr>,"."]}
       />
       <main>
         <section className="bg-white" id="uses">
           <Container>
+            <h2 className="mb-4 text-center">All Posts</h2>
             <Row>
               {data.allMdx.nodes.map(({ excerpt, frontmatter, fields }, index) => {
                 return (
-                  <Col md={6} xl={4} key={index}>
+                  <Col className="mb-5" md={6} xl={4} key={index}>
                     <Card as="a" className="lift h-100" href={fields.slug} title={`Blog Post: ${frontmatter.title}`}>
                         {frontmatter.thumbnail && <Img fluid={frontmatter.thumbnail.childImageSharp.sizes} className="fluid card-img-top" alt={frontmatter.title} />} 
                         {!frontmatter.thumbnail && frontmatter.featuredImage && <Img fluid={frontmatter.featuredImage.childImageSharp.sizes} className="fluid card-img-top" alt={frontmatter.title} />} 

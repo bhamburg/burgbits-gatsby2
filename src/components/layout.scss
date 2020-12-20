@@ -129,9 +129,6 @@ html,body {
 }
 
 // cards 
-div[class^="col-"] {
-  margin-bottom: 2rem;
-}
 .card.featured-post {
   @include media-breakpoint-up(lg) {
     flex-direction: row;
@@ -234,6 +231,10 @@ div[class^="col-"] {
 //content
 code {
   font-family: $jetbrains;
+}
+
+strikethrough {
+  text-decoration: line-through;
 }
 
 // Loader

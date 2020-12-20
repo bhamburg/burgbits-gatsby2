@@ -70,8 +70,7 @@ const IndexPage = () => {
       <Header 
         title="Hi, I’m Brian."
         subtitle="I’m a web developer, designer, and musician."
-        text="This is my portfolio of technical and creative work, 
-        as well as musings on a variety of hobbies and interests."
+        text="Most of my days are spent working and playing in Philadelphia where I live with my wife and twin daughters."
         img={data.profileImage.childImageSharp.sizes}
       />
       <main>
@@ -79,28 +78,25 @@ const IndexPage = () => {
           <Container>
             <Row className="text-center">
               <Col xs={6} lg={3}>
-                <Link to="/about">
+                <Link to="/now">
                   <Img fluid={data.lovePhila.childImageSharp.sizes} className="fluid rounded" />
                 </Link>
               </Col>
               <Col xs={6} lg={3}>
-                <Link to="/about">
+                <Link to="/now">
                   <Img fluid={data.shades.childImageSharp.sizes} className="fluid rounded" />
                 </Link>
               </Col>
               <Col>
-                <h2>
+                <h2 className="m-3 mt-lg-0 m-xl-3">
                   So who is this Hamburg character, anyway?
                 </h2>
                 <p>
                   <i>Father of twins. Strummer of strings. Wrangler of the Web. Implementer of interfaces. Purveyor of pixels. Never bored.</i>
                 </p>
-                <p>
-                  This is just the tip of the Brian Hamburg iceberg.
+                <p> 
+                  This is just the tip of the Brian Hamburg iceberg. Learn more about what's going on in my life <Link to="/now">right now</Link>, or specifically what I've been <Link to="/reads">reading</Link>, <Link to="/plays">playing</Link>, and tech that I have been <Link to="/uses">using</Link>.
                 </p>
-                <Link to="/about" className="btn btn-dark btn-lg">
-                  {`Read About Brian`}
-                </Link>
               </Col>
             </Row>
           </Container>
@@ -118,7 +114,7 @@ const IndexPage = () => {
         <section className="bg-light" id="recently-written">
           <Container>
             <h2 className="mb-4 text-center">Latest Posts</h2>
-            <Row className="mb-2">
+            <Row className="mb-5">
               {data.allMdx.nodes.map(({ excerpt, frontmatter, fields }, index) => {
                 return index === 0 && (
                   <Col xl={{ span: 10, offset: 1 }} key={index}>
@@ -151,7 +147,7 @@ const IndexPage = () => {
             <Row>
               {data.allMdx.nodes.map(({ excerpt, frontmatter, fields }, index) => {
                 return (0 < index && index < 7) && (
-                  <Col md={6} xl={4} key={index}>
+                  <Col className="mb-5" md={6} xl={4} key={index}>
                     <Card as="a" className="lift h-100" href={fields.slug} title={`Blog Post: ${frontmatter.title}`}>
                         {frontmatter.thumbnail && <Img fluid={frontmatter.thumbnail.childImageSharp.sizes} className="fluid card-img-top" alt={frontmatter.title} />} 
                         {!frontmatter.thumbnail && frontmatter.featuredImage && <Img fluid={frontmatter.featuredImage.childImageSharp.sizes} className="fluid card-img-top" alt={frontmatter.title} />} 
@@ -175,7 +171,7 @@ const IndexPage = () => {
               )}
             </Row>
             <div className="text-center mt-3">
-              <Link to="/blog" className="btn btn-dark btn-lg">
+              <Link to="/blog" className="btn btn-primary btn-lg">
                 {`See All Posts`}
               </Link>
             </div>
