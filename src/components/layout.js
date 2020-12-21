@@ -31,8 +31,8 @@ const Layout = ({ children }) => {
         <Navigation siteTitle={data.site.siteMetadata.title} />
       </Headroom>
       {children}
-      <footer className="bg-dark text-white">
-        <Container>
+      <footer className="bg-dark text-muted">
+        <Container className="text-center">
           Copyright © {new Date().getFullYear()} Brian Hamburg
         </Container>
       </footer>
