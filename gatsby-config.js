@@ -66,6 +66,14 @@ module.exports = {
         icon: `src/images/burgbits-castle-w-bg.svg`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: 'gatsby-source-google-spreadsheets',
+      options: {
+        spreadsheetId: '1i--rVptrsSo5GxyNE1o4PW00GOYkOQgtgpgLhw4bXiA',
+        apiKey: 'AIzaSyBE8sdV7oX8caUecILyrnsnX9Nptt2oKuY'
+      }
+    },
+    //docs.google.com/spreadsheets/d/1kpEtomGI_xBJ9q-0I_2ym6z5vO_lKpb8Cp25mHf7L1I/edit?usp=sharing
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

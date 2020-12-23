@@ -74,7 +74,7 @@ const IndexPage = () => {
         img={data.profileImage.childImageSharp.sizes}
       />
       <main>
-        <section className="bg-white" id="about">
+        <section className="bg-white">
           <Container>
             <Row className="text-center">
               <Col xs={6} lg={3}>
@@ -95,23 +95,13 @@ const IndexPage = () => {
                   <i>Father of twins. Strummer of strings. Wrangler of the Web. Implementer of interfaces. Purveyor of pixels. Never bored.</i>
                 </p>
                 <p> 
-                  This is just the tip of the Brian Hamburg iceberg. Learn more about what's going on in my life <Link to="/now">right now</Link>, or specifically what I've been <Link to="/reads">reading</Link>, <Link to="/plays">playing</Link>, and tech that I have been <Link to="/uses">using</Link>.
+                  This is just the tip of the Brian Hamburg iceberg. Learn more about what's going on in my life <Link to="/now">right now</Link>, or specifically my <Link to="/reading">reading list</Link>, <Link to="/music">music</Link>, <Link to="/gaming">games</Link>, and <Link to="/uses">tech I've been using</Link>.
                 </p>
               </Col>
             </Row>
           </Container>
         </section>
-        {/* <section className="bg-secondary text-white" id="project">
-          <Container>
-            <h2>Featured Project</h2>
-            <Row>
-              <Col>
-                Some cool thing
-              </Col>
-            </Row>
-          </Container>
-        </section> */}
-        <section className="bg-light" id="recently-written">
+        <section className="bg-light">
           <Container>
             <h2 className="mb-4 text-center">Latest Posts</h2>
             <Row className="mb-5">
