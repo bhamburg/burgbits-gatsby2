@@ -9,7 +9,7 @@ import SEO from "../components/seo"
 const MusicPage = props => {
   const data = useStaticQuery(graphql`
     query {
-      usesImage: file(relativePath: { eq: "mister-zelda.jpeg" }) {
+      musicImage: file(relativePath: { eq: "ramblers-bookstore.jpg" }) {
         childImageSharp {
           sizes(quality: 100) {
             ...GatsbyImageSharpSizes_withWebp
@@ -24,15 +24,14 @@ const MusicPage = props => {
     <Header 
       title="/music"
       text={[<em>“Without music to decorate it, time is just a bunch of boring production deadlines or dates by which bills must be paid.”</em>,<br />,"—Frank Zappa"]}
-      img={data.usesImage.childImageSharp.sizes}
+      img={data.musicImage.childImageSharp.sizes}
     />
     <main>
       <section className="bg-white">
         <Container>
           <Row>
             <Col xl={{ span: 8, offset: 2 }}>
-              <h3>Currently Reading</h3>
-              <h3>Books Read</h3>
+              <h3>Music Goes Here</h3>
             </Col>
           </Row>
         </Container>

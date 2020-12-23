@@ -73,6 +73,7 @@ module.exports = {
         apiKey: 'AIzaSyBE8sdV7oX8caUecILyrnsnX9Nptt2oKuY'
       }
     },
+    `gatsby-plugin-anchor-links`,
     //docs.google.com/spreadsheets/d/1kpEtomGI_xBJ9q-0I_2ym6z5vO_lKpb8Cp25mHf7L1I/edit?usp=sharing
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

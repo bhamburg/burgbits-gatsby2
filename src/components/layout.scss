@@ -216,25 +216,17 @@ html,body {
   color: inherit;
 }
 
-// Reading List
-.book {
-  margin-bottom: 2em;
-  text-align: center;
-  font-size: 11px;
-  line-height: 1;
-  img {
-    height: intrinsic;
-    margin-top: 7px;
-  }
-}
-
 //content
 code {
   font-family: $jetbrains;
 }
-
 strikethrough {
   text-decoration: line-through;
+}
+
+// Lists
+.table th {
+  border-top: none;
 }
 
 // Loader

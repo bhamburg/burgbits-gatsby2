@@ -79,12 +79,12 @@ const IndexPage = () => {
             <Row className="text-center">
               <Col xs={6} lg={3}>
                 <Link to="/now">
-                  <Img fluid={data.lovePhila.childImageSharp.sizes} className="fluid rounded" />
+                  <Img fluid={data.lovePhila.childImageSharp.sizes} className="fluid rounded" title="Spruce Street Harbor Park" />
                 </Link>
               </Col>
               <Col xs={6} lg={3}>
                 <Link to="/now">
-                  <Img fluid={data.shades.childImageSharp.sizes} className="fluid rounded" />
+                  <Img fluid={data.shades.childImageSharp.sizes} className="fluid rounded" title="Fralinger @ Quaker City's 2019 serenade" />
                 </Link>
               </Col>
               <Col>
@@ -95,7 +95,7 @@ const IndexPage = () => {
                   <i>Father of twins. Strummer of strings. Wrangler of the Web. Implementer of interfaces. Purveyor of pixels. Never bored.</i>
                 </p>
                 <p> 
-                  This is just the tip of the Brian Hamburg iceberg. Learn more about what's going on in my life <Link to="/now">right now</Link>, or specifically my <Link to="/reading">reading list</Link>, <Link to="/music">music</Link>, <Link to="/gaming">games</Link>, and <Link to="/uses">tech I've been using</Link>.
+                  This is just the tip of the Brian Hamburg iceberg. Learn more about what's going on in my life <Link to="/now">right now</Link>, or specifically my <Link to="/reads">reading list</Link>, <Link to="/runs">official runs</Link>, <Link to="/games">games finished</Link>, and <Link to="/uses">tech I've been using</Link>.
                 </p>
               </Col>
             </Row>

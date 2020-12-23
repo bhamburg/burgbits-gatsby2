@@ -54,15 +54,4 @@ const Header = ({ title, subtitle, text, date, category, img }) => {
   )
 }
 
-Header.propTypes = {
-  title: PropTypes.string,
-  subtitle: PropTypes.string, 
-  text: PropTypes.string, 
-  img: PropTypes.object,
-}
-
-Header.defaultProps = {
-  title: `[]`,
-}
-
 export default Header
