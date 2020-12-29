@@ -100,11 +100,6 @@ const GamesPage = props => {
               </Tabs>
             </Col>
           </Row>
-          <Row>
-            <Col xl={{ span: 10, offset: 1 }}>
-              <h2 className="mt-4 mb-4" id="hardware">Gaming Hardware</h2>
-            </Col>
-          </Row>
         </Container>
       </section>
     </main>

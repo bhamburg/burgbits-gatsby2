@@ -1,3 +1,6 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 module.exports = {
   siteMetadata: {
     title: `BurgBits`,
@@ -18,6 +21,12 @@ module.exports = {
             options: {
               maxWidth: 590,
             },
+          },
+          {
+            resolve: `gatsby-remark-external-links`,
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
           },
         ],
         plugins: [
@@ -69,9 +78,16 @@ module.exports = {
     {
       resolve: 'gatsby-source-google-spreadsheets',
       options: {
-        spreadsheetId: '1i--rVptrsSo5GxyNE1o4PW00GOYkOQgtgpgLhw4bXiA',
-        apiKey: 'AIzaSyBE8sdV7oX8caUecILyrnsnX9Nptt2oKuY'
+        spreadsheetId: process.env.SHEET,
+        apiKey: process.env.API_KEY
       }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // The property ID; the tracking code won't be generated without it
+        trackingId: "UA-11699016-1",
+      },
     },
     `gatsby-plugin-anchor-links`,
     //docs.google.com/spreadsheets/d/1kpEtomGI_xBJ9q-0I_2ym6z5vO_lKpb8Cp25mHf7L1I/edit?usp=sharing

@@ -8,15 +8,38 @@ description: >-
 published: true
 ---
 
-AEM Development Environment on Apple Silicon
+## So I got one of those newfangled Macs...
 
-- Install JDK 8 for Apple Silicon from https://www.azul.com/downloads/zulu-community/?package=jdk
-- Set $JAVA_HOME in ~/.zshrc
-    - JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu8.50.0.1017-ca-jdk8.0.275-macos_aarch64
-    - export JAVA_HOME;
-- Install Homebrew for Rosetta 2 (https://soffes.blog/homebrew-on-apple-silicon)
-- Install Maven via Homebrew for Rosetta 2 
-    - arch -x86_64 brew install maven
-- Set alias to AEM quickstart in ~/.zshrc
-    - alias aem='java -jar /Users/burgbits/AEM/6.5/AEM_6.5_Quickstart.jar'
+Both the MacBook Air and Pro got some great reviews, with the former getting almost _too much_ praise and I was in desparate need for a device that could be used to get my work done in a room besides the office which doubles as a playroom for our 4.5-year-old twins. Work from home has led to some interesting daily habits that are worth another post entirely. 
+
+I digress: I ended up with a space-gray MacBook Air. It's so dang fast at everything! As with any bleeding-edge technology, I was a bit unsure how my workflow would adapt to the new platform. Fortunately, many of the tools I use every day as a developer have already been ported to the new Apple chips, and the others run without any perceptible lag. In other words, with a tiny bit of research, I was able to get Adobe Experience Manager and Node up running quickly, _and fast_. Here's what I had to do for AEM.
+
+### Java
+Most of the projects I touch at Jefferson rely on JDK 8. The kind folks at Azul have already ported OpenJDK for Apple Silicon from https://www.azul.com/downloads/zulu-community/?package=jdk
+
+Once you install it somwhere, set the `$JAVA_HOME` variable to the correct path in your `~/.zshrc` or `~/.bash` file as such:
+
+```shell
+JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu8.50.0.1017-ca-jdk8.0.275-macos_aarch64
+export JAVA_HOME;
+```
+### Homebrew
+Install Homebrew for Rosetta 2 (https://soffes.blog/homebrew-on-apple-silicon)
+
+### Maven
+Maven doesn't yet run under the M1 chip natively, but it's pretty simple to install Maven via Homebrew for Rosetta 2. 
+
+```console
+arch -x86_64 brew install maven
+```
+
+## .jar Files in Big Sur
+
+One "gotcha" I ran into running these versions of Open JDK on Big Sur is that double-clicking on the AEM Quickstar .jar doesn't do much of anything. I was able to get around this by running the .jar from the command line. Navigating to the folder or typing the entire path to the .jar can become tedious so I set an alias to AEM quickstart in my `~/.zshrc` file. Unless there is a workaround for launching the GUI version, this is how I'm going to be firing up my local AEM instance on the M1.
+
+
+
+```shell
+alias aem='java -jar /Users/burgbits/AEM/6.5/AEM_6.5_Quickstart.jar'
+```
 

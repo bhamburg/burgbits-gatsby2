@@ -2,8 +2,6 @@ import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { Container, Row, Col } from "react-bootstrap"
 
-import { AnchorLink } from "gatsby-plugin-anchor-links"
-
 import Layout from "../components/layout"
 import Header from "../components/header"
 import SEO from "../components/seo"
@@ -41,7 +39,6 @@ const UsesPage = props => {
                 <li>Massdrop x Sennheiser HD 58X Jubilee Headphones</li>
                 <li>AirPods Pro</li>
               </ul>
-              <p><AnchorLink to="/games#hardware">Gaming Hardware</AnchorLink></p>
               <h3>Software</h3>
               <ul>
                 <li>Node.js / NPM / Yarn</li>
