@@ -19,6 +19,15 @@ const Navigation = ({ siteTitle }) => (
         <Link activeClassName="active" className="nav-link" to="/blog">
           /blog
         </Link>
+        {/* <Link activeClassName="active" className="nav-link" to="/music">
+          /music
+        </Link> */}
+        <Link activeClassName="active" className="nav-link" to="/reads">
+          /reads
+        </Link>
+        <Link activeClassName="active" className="nav-link" to="/games">
+          /games
+        </Link>
         <Link activeClassName="active" className="nav-link" to="/uses">
           /uses
         </Link>
