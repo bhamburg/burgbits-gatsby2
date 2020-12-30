@@ -1,4 +1,3 @@
-import PropTypes from "prop-types"
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
@@ -52,17 +51,6 @@ const Header = ({ title, subtitle, text, date, category, img }) => {
       </Jumbotron>
     </BackgroundImage>
   )
-}
-
-Header.propTypes = {
-  title: PropTypes.string,
-  subtitle: PropTypes.string, 
-  text: PropTypes.string, 
-  img: PropTypes.object,
-}
-
-Header.defaultProps = {
-  title: `[]`,
 }
 
 export default Header

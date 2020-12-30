@@ -8,7 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import { Container } from "react-bootstrap"
+import { Container, Row, Col } from "react-bootstrap"
 import Headroom from "react-headroom"
 
 import "./layout.scss"
@@ -33,7 +33,14 @@ const Layout = ({ children }) => {
       {children}
       <footer className="bg-dark text-muted">
         <Container className="text-center">
-          Copyright © {new Date().getFullYear()} Brian Hamburg
+          <Row>
+            <Col xs={12} lg={6} className="text-lg-left">
+              Contact: <a className="text-white" href="mailto:brian@burgbits.com">brian@burgbits.com</a>
+            </Col>
+            <Col xs={12} lg={6} className="text-lg-right">
+              Copyright © {new Date().getFullYear()} Brian Hamburg
+            </Col>
+          </Row>
         </Container>
       </footer>
     </>
