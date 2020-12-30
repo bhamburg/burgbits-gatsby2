@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import { Container, Row, Col, Table, Tabs, Tab } from "react-bootstrap"
 
 import Layout from "../components/layout"
@@ -43,11 +43,11 @@ const GamesPage = props => {
           <Row>
             <Col xl={{ span: 10, offset: 1 }}>
               <h2 className="mb-4">Currently Playing</h2>
-              <Table hover>
+              <Table>
                 <thead>
                   <tr>
-                    <th width="38%">Title</th>
-                    <th>Platform</th>
+                    <th width="37%">Title</th>
+                    <th width="125px">Platform</th>
                     <th>Notes</th>
                   </tr>
                 </thead>
@@ -63,7 +63,7 @@ const GamesPage = props => {
                 })}
                 </tbody>
               </Table>
-              <h2 className="mt-4 mb-4">Games Finished</h2>
+              <h2 className="mt-4">Games Finished</h2>
               <Tabs
                 id="finished-games"
                 activeKey={yearSelected}
@@ -71,12 +71,12 @@ const GamesPage = props => {
               >
                 {years.map((year, index) => {
                   return (
-                    <Tab eventKey={year} title={year}>
-                      <Table hover>
+                    <Tab key={year} eventKey={year} title={year}>
+                      <Table>
                         <thead>
                           <tr>
-                            <th width="38%">Title</th>
-                            <th>Platform</th>
+                            <th width="37%">Title</th>
+                            <th width="125px">Platform</th>
                             <th className="text-right" style={{ width: 140 }}>Date Finished</th>
                             <th>Notes</th>
                           </tr>

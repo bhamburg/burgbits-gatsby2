@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import { Container, Row, Col, Table } from "react-bootstrap"
 
 import Layout from "../components/layout"
@@ -41,7 +41,7 @@ const RunsPage = props => {
           <Row>
             <Col xl={{ span: 10, offset: 1 }}>
               <h2>Official Races</h2>
-                <Table hover>
+                <Table>
                   <thead>
                     <tr>
                       <th>Race</th>

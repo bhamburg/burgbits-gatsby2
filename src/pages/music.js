@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import { Container, Row, Col } from "react-bootstrap"
 
 import Layout from "../components/layout"
@@ -31,7 +31,7 @@ const MusicPage = props => {
         <Container>
           <Row>
             <Col xl={{ span: 8, offset: 2 }}>
-              <h3>Music Goes Here</h3>
+              <h2 className="text-center">Coming Soon</h2>
             </Col>
           </Row>
         </Container>
