@@ -311,7 +311,7 @@ strikethrough {
  */
 
  code[class*="language-"],
- pre[class*="language-"] {
+ div[class*="language-"] {
    color: #f92aad;
    text-shadow: 0 0 2px #100c0f, 0 0 5px #dc078e33, 0 0 10px #fff3;
    background: none;
@@ -335,7 +335,7 @@ strikethrough {
  }
  
  /* Code blocks */
- pre[class*="language-"] {
+ div[class*="language-"] {
    padding: 1em;
    margin-bottom: 1em;
    overflow: auto;
@@ -343,11 +343,11 @@ strikethrough {
  }
  
  // Console
- pre[class*="language-console"],
- pre[class*="language-console"] .token {
+ div[class*="language-console"],
+ div[class*="language-console"] .token {
    color: #f4eee4 !important;
  }
- pre[class*="language-console"]::before {
+ div[class*="language-console"]::before {
    content: '$';
    pointer-events: none;
    float: left;
@@ -355,7 +355,7 @@ strikethrough {
  }
  
  :not(pre) > code[class*="language-"],
- pre[class*="language-"] {
+ div[class*="language-"] {
    background-color: $dark;
  }
  

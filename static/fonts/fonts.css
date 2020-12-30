@@ -11,7 +11,7 @@
 
 
 /* Inter */
-@font-face {
+/* @font-face {
   font-family: 'Inter';
   font-style:  normal;
   font-weight: 100;
@@ -26,7 +26,7 @@
   font-display: swap;
   src: url("Inter/Inter-ThinItalic.woff2?v=3.13") format("woff2"),
        url("Inter/Inter-ThinItalic.woff?v=3.13") format("woff");
-}
+} */
 
 @font-face {
   font-family: 'Inter';

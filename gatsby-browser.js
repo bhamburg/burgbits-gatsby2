@@ -23,7 +23,8 @@ const components = {
                     getLineProps, 
                     getTokenProps 
                 }) => (
-                    <pre className={className} style={style}>
+                    <div className={className} style={style}>
+                        {console.log(className)}
                         {tokens.map((line, i) => (
                         <div {...getLineProps({ line, key: i })}>
                             {line.map((token, key) => (
@@ -31,7 +32,7 @@ const components = {
                             ))}
                         </div>
                         ))}
-                    </pre>
+                    </div>
                 )}
             </Highlight>
         )
