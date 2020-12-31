@@ -42,7 +42,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: title && `${title} · ${site.siteMetadata.author}` || `${site.siteMetadata.author}`,
         },
         {
           property: `og:description`,
@@ -53,16 +53,20 @@ function SEO({ description, lang, meta, title }) {
           content: `website`,
         },
         {
+          property: `og:image`,
+          content: `https://burgbits.com/burgbits-og-thumbnail.jpg`,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: `@burgbits`,
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: title && `${title} · ${site.siteMetadata.author}` || `${site.siteMetadata.author}`,
         },
         {
           name: `twitter:description`,
