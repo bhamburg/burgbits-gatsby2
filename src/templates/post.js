@@ -13,7 +13,7 @@ const shortcodes = { Link } // Provide common components here
 export default function PageTemplate({ data: { mdx } }) {
   return (
     <Layout>
-        <SEO title={mdx.frontmatter.title} />
+        <SEO title={mdx.frontmatter.title} description={mdx.frontmatter.description} />
         <Header 
             title={mdx.frontmatter.title} 
             date={mdx.frontmatter.date}
