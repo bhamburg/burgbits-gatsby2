@@ -31,7 +31,7 @@ const ReadsPage = props => {
   `)
   return (
   <Layout>
-    <SEO title="Reads" />
+    <SEO title="Books I'm Reading" />
     <Header 
       title="/reads"
       text={[<em>“The more that you read, the more things you will know. The more that you learn, the more places you’ll go.”</em>,<br />,"—Dr. Seuss"]}
