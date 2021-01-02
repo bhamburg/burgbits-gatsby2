@@ -29,7 +29,7 @@ const RunsPage = props => {
   `)
   return (
   <Layout>
-    <SEO title="Runs" />
+    <SEO title="Official Races" />
     <Header 
       title="/runs"
       text={[<em>“But when I run, the world grows quiet. Demons are forgotten, Krakens are slain, and Blerches are silenced.”</em>,<br />,"—The Oatmeal"]}

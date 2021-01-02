@@ -31,7 +31,7 @@ const GamesPage = props => {
   `)
   return (
   <Layout>
-    <SEO title="Games" />
+    <SEO title="Games I'm Playing" />
     <Header 
       title="/games"
       text={[<em>“Video games are bad for you? That’s what they said about rock and roll.”</em>,<br />,"—Shigeru Miyamoto"]}
