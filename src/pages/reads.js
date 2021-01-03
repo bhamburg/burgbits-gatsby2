@@ -43,10 +43,10 @@ const ReadsPage = props => {
           <Row>
             <Col xl={{ span: 10, offset: 1 }}>
               <h2 className="mb-4">Currently Reading</h2>
-              <Table className="table-responsive-sm">
+              <Table responsive="sm">
                   <thead>
                     <tr>
-                      <th style={{ width: '55%' }}>Title</th>
+                      <th style={{ width: '50%' }}>Title</th>
                       <th>Author(s)</th>
                     </tr>
                   </thead>
@@ -76,10 +76,10 @@ const ReadsPage = props => {
                 {years.map((year, index) => {
                   return (
                     <Tab key={year} eventKey={year} title={year}>
-                      <Table className="table-responsive-sm">
+                      <Table responsive="sm">
                         <thead>
                           <tr>
-                            <th style={{ width: '55%' }}>Title</th>
+                            <th style={{ width: '50%' }}>Title</th>
                             <th>Author(s)</th>
                             <th className="text-right" width="135">Date Finished</th>
                           </tr>
@@ -107,10 +107,10 @@ const ReadsPage = props => {
                   )
                 })}
                   <Tab eventKey="Earlier" title="Earlier">
-                    <Table className="table-responsive-sm">
+                    <Table responsive="sm">
                       <thead>
                         <tr>
-                          <th style={{ width: '55%' }}>Title</th>
+                          <th style={{ width: '50%' }}>Title</th>
                           <th>Author(s)</th>
                           <th className="text-right" width="135">Date Finished</th>
                         </tr>

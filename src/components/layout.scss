@@ -31,7 +31,7 @@
 
 // global styles
 html,body {
-  background-color: $dark;
+  background-color: theme-color("dark");
 }
 #___gatsby {
   min-height: 100vh;
@@ -140,7 +140,7 @@ html,body {
     }
     .card-title {
       font-size: 2.5rem;
-      color: $dark;
+      color: theme-color("dark");
       -webkit-transition: all 0.15s ease-in-out;
       transition: all 0.15s ease-in-out;
     }
@@ -175,7 +175,7 @@ html,body {
     color: darken($dark, 15%);
   }
   .card-footer {
-    color: $dark;
+    color: theme-color("dark");
   }
 }
 .lift:active {
@@ -187,7 +187,7 @@ html,body {
     color: darken($dark, 15%);
   }
   .card-footer {
-    color: $dark;
+    color: theme-color("dark");
   }
 }
 

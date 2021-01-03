@@ -21,10 +21,12 @@ const GamesPage = props => {
       }
       allGoogleGamesSheet {
         nodes {
+          completed
           dateFinished
-          notes
           platform
           title
+          firstTime
+          notes
         }
       }
     }
@@ -43,11 +45,12 @@ const GamesPage = props => {
           <Row>
             <Col xl={{ span: 10, offset: 1 }}>
               <h2 className="mb-4">Currently Playing</h2>
-              <Table className="table-responsive-sm">
+              <Table responsive="sm">
                 <thead>
                   <tr>
-                    <th width="55%">Title</th>
+                    <th width="40%">Title</th>
                     <th width="125px">Platform</th>
+                    <th className="d-none d-sm-table-cell">Notes</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -55,12 +58,13 @@ const GamesPage = props => {
                   dateFinished, 
                   notes, 
                   platform, 
-                  title
+                  title,
                 }, index) => {
                   return !dateFinished && (
                     <tr key={index}>
                       <td>{title}</td>
                       <td>{platform}</td>
+                      <td className="d-none d-sm-table-cell">{notes}</td>
                     </tr>
                   )
                 })}
@@ -75,23 +79,40 @@ const GamesPage = props => {
                 {years.map((year, index) => {
                   return (
                     <Tab key={year} eventKey={year} title={year}>
-                      <Table className="table-responsive-sm">
+                      <Table responsive="sm">
                         <thead>
                           <tr>
-                            <th width="55%">Title</th>
+                            <th width="40%">Title</th>
                             <th width="125px">Platform</th>
-                            <th className="text-right" style={{ width: 140 }}>Date Finished</th>
+                            <th className="text-center text-xl-right" width="135">Date Finished</th>
+                            <th className="text-center">First Time</th>
+                            <th className="text-center">100%</th>
+                            <th className="d-none d-sm-table-cell">Notes</th>
                           </tr>
                         </thead>
                         <tbody>
-                        {data.allGoogleGamesSheet.nodes.map(({ dateFinished, notes, platform, title}, index) => {
+                        {data.allGoogleGamesSheet.nodes.map(({ 
+                          completed,
+                          dateFinished,
+                          platform,
+                          title,
+                          firstTime,
+                          notes
+                        }, index) => {
                           return dateFinished 
                           && dateFinished.includes(year) 
                           && (
                             <tr key={index}>
                               <td>{title}</td>
                               <td>{platform}</td>
-                              <td className="text-right">{dateFinished}</td>
+                              <td className="text-center text-xl-right">{dateFinished}</td>
+                              <td className="text-center">
+                                {firstTime && <span role="img" aria-label="First Playthrough" title="First Playthrough">✅</span>}
+                              </td>
+                              <td className="text-center">
+                                {completed && <span role="img" aria-label="100% Completion" title="100% Completion">💯</span>}
+                              </td>
+                              <td className="d-none d-sm-table-cell">{notes}</td>
                             </tr>
                           )
                         })}
@@ -101,20 +122,25 @@ const GamesPage = props => {
                   )
                 })}
                 <Tab eventKey="Earlier" title="Earlier">
-                    <Table className="table-responsive-sm">
+                    <Table responsive="sm">
                       <thead>
                         <tr>
-                          <th style={{ width: '55%' }}>Title</th>
-                          <th>Author(s)</th>
-                          <th className="text-right" width="135">Date Finished</th>
+                          <th width="40%">Title</th>
+                          <th width="125px">Platform</th>
+                          <th className="text-center text-xl-right" width="135">Date Finished</th>
+                          <th className="text-center">First Time</th>
+                          <th className="text-center">100%</th>
+                          <th className="d-none d-sm-table-cell">Notes</th>
                         </tr>
                       </thead>
                       <tbody>
                         {data.allGoogleGamesSheet.nodes.map(({ 
-                          dateFinished, 
-                          notes, 
-                          platform, 
-                          title
+                          completed,
+                          dateFinished,
+                          platform,
+                          title,
+                          firstTime,
+                          notes
                         }, index) => {
                           return dateFinished
                           // find all dates earlier than last year in tab array
@@ -123,7 +149,14 @@ const GamesPage = props => {
                             <tr key={index}>
                               <td>{title}</td>
                               <td>{platform}</td>
-                              <td className="text-right">{dateFinished}</td>
+                              <td className="text-center text-xl-right">{dateFinished}</td>
+                              <td className="text-center">
+                                {firstTime && <span role="img" aria-label="First Playthrough" title="First Playthrough">✅</span>}
+                              </td>
+                              <td className="text-center">
+                                {completed && <span role="img" aria-label="100% Completion" title="100% Completion">💯</span>}
+                              </td>
+                              <td className="d-none d-sm-table-cell">{notes}</td>
                             </tr>
                           )
                         })}

@@ -42,7 +42,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:title`,
-          content: title && `${title} · ${site.siteMetadata.author}` || `${site.siteMetadata.author}`,
+          content: (title && `${title} · ${site.siteMetadata.author}`) || `${site.siteMetadata.author}`,
         },
         {
           property: `og:description`,
@@ -66,7 +66,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:title`,
-          content: title && `${title} · ${site.siteMetadata.author}` || `${site.siteMetadata.author}`,
+          content: (title && `${title} · ${site.siteMetadata.author}`) || `${site.siteMetadata.author}`,
         },
         {
           name: `twitter:description`,
