@@ -38,6 +38,7 @@ const UsesPage = props => {
                 <li>Drop ALT Mechanical Keyboard</li>
                 <li>Massdrop x Sennheiser HD 58X Jubilee Headphones</li>
                 <li>AirPods Pro</li>
+                <li>iPhone 12 Pro Max</li>
               </ul>
               <h3>Software</h3>
               <ul>
