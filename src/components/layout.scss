@@ -222,10 +222,9 @@ pre.prism-code {
 } 
 code {
   font-family: $jetbrains;
-  background: $dark;
+  color: rgb(108, 103, 131);
   border-radius: .25em;
   padding: .25em;
-  color: #f4eee4;
 }
 strikethrough {
   text-decoration: line-through;
@@ -356,7 +355,7 @@ strikethrough {
  
  :not(pre) > code[class*="language-"],
  div[class*="language-"] {
-   background-color: $dark;
+   color: $success;
  }
  
  /* Inline code */

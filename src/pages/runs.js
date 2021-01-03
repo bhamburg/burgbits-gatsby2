@@ -41,7 +41,7 @@ const RunsPage = props => {
           <Row>
             <Col xl={{ span: 10, offset: 1 }}>
               <h2>Official Races</h2>
-                <Table>
+                <Table className="table-responsive-sm">
                   <thead>
                     <tr>
                       <th>Race</th>
