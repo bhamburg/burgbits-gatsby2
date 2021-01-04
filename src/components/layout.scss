@@ -55,7 +55,7 @@ html,body {
     }
   }
   .jumbotron {
-    background-color: rgba(25,25,25,0.9);
+    background-color: theme-color("dark");
     text-align: center;
     @include media-breakpoint-up(md) {
       text-align: unset;
@@ -172,7 +172,7 @@ html,body {
   box-shadow: 0 0.5rem 2rem 0 rgba(31, 45, 65, 0.25);
   .card-title {
     text-decoration: underline;
-    color: darken($dark, 15%);
+    color: darken(theme-color("dark"), 15%);
   }
   .card-footer {
     color: theme-color("dark");
@@ -184,7 +184,7 @@ html,body {
   box-shadow: 0 0.15rem 1.75rem 0 rgba(31, 45, 65, 0.15);
   .card-title {
     text-decoration: underline;
-    color: darken($dark, 15%);
+    color: darken(theme-color("dark"), 15%);
   }
   .card-footer {
     color: theme-color("dark");

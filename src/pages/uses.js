@@ -23,7 +23,7 @@ const UsesPage = props => {
     <SEO title="Uses" />
     <Header 
       title="/uses"
-      text={`Tools and tech that I use regularly.`}
+      text={`Tools and tech that I use on a regular basis.`}
       img={data.usesImage.childImageSharp.sizes}
     />
     <main>
