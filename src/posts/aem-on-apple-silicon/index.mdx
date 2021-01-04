@@ -38,7 +38,7 @@ Anecdotally, Maven emulated on Rosetta 2 building projects for Java running on A
 
 ### .jar Files in Big Sur
 
-One "gotcha" I ran into running these versions of Open JDK on Big Sur is that the usual way of starting AEM, double-clicking on `AEM_6.5_Quickstart.jar` file, doesn't do much of anything. "The operating couldn't be completed. Unable to locate a Java Runtime." Java isn't installed on this machine by default and I haven't yet figured out how to get macOS to point to my Zulu OpenJDK install. I was able to get around this by running the `.jar` from the command line. Navigating to the folder or typing the entire path can become tedious so I set an alias to AEM quickstart in my `~/.zshrc` file. Unless there is a workaround for launching the GUI version, this is how I'm going to be firing up my local AEM instance on the M1.
+One "gotcha" I ran into running these versions of Open JDK on Big Sur is that the usual way of starting AEM, double-clicking on the `AEM_6.5_Quickstart.jar` file, doesn't do much of anything. "The operating couldn't be completed. Unable to locate a Java Runtime." Java isn't installed on this machine by default and I haven't yet figured out how to get macOS to point to my Zulu OpenJDK install. I was able to get around this by running the `.jar` from the command line. Navigating to the folder or typing the entire path can become tedious so I set an alias to AEM quickstart in my `~/.zshrc` file. Unless there is a workaround for launching the GUI version, this is how I'm going to be firing up my local AEM instance on the M1.
 ```shell
 # ~/.zshrc
 
