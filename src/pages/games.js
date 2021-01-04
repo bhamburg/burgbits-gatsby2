@@ -95,7 +95,7 @@ const GamesPage = props => {
                       <Table responsive="sm">
                         <thead>
                           <tr>
-                            <th width="40%">Title</th>
+                            <th>Title</th>
                             <th width="125px">Platform</th>
                             <th className="text-center">
                               <span 
@@ -150,7 +150,7 @@ const GamesPage = props => {
                     <Table responsive="sm">
                       <thead>
                         <tr>
-                          <th width="40%">Title</th>
+                          <th>Title</th>
                           <th width="125px">Platform</th>
                           <th className="text-center">
                             <span 
