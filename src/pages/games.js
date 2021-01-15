@@ -71,7 +71,7 @@ const GamesPage = props => {
                 </tbody>
               </Table>
               <h2 className="mt-4">Games Finished</h2>
-              <p>
+              <p className="font-weight-bold">
                 <span 
                   role="img" 
                   aria-label="First Playthrough" 
@@ -192,8 +192,8 @@ const GamesPage = props => {
                               <td className="text-center">
                                 {completed && <span role="img" aria-label="100% Completion" title="100% Completion">💯</span>}
                               </td>
-                              <td className="d-none d-sm-table-cell">{notes}</td>
                               <td className="text-right">{dateFinished}</td>
+                              <td className="d-none d-sm-table-cell">{notes}</td>
                             </tr>
                           )
                         })}
