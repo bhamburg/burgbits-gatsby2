@@ -7,7 +7,7 @@ import { Jumbotron, Container, Row, Col } from "react-bootstrap"
 const Header = ({ title, subtitle, text, date, category, img }) => {
   const data = useStaticQuery(graphql`
     query {
-      backgroundImage: file(relativePath: { eq: "winter-in-fleuhr-park.jpg" }) {
+      backgroundImage: file(relativePath: { eq: "nw-beach.jpg" }) {
         childImageSharp {
           fluid(quality: 90, maxWidth: 1920) {
             ...GatsbyImageSharpFluid_withWebp
