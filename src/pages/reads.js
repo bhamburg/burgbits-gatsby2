@@ -7,8 +7,8 @@ import Header from "../components/header"
 import SEO from "../components/seo"
 
 const ReadsPage = props => {
-  const [yearSelected, setYearSelected] = useState(2020)
-  const years = [2020,2019,2018]
+  const [yearSelected, setYearSelected] = useState(2021)
+  const years = [2021,2020,2019]
 
   const data = useStaticQuery(graphql`
     query {
