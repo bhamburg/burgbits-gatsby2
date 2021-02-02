@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Container, Row, Col, Table, Tabs, Tab } from "react-bootstrap"
+import dayjs from "dayjs"
 
 import Layout from "../components/layout"
 import Header from "../components/header"
@@ -19,7 +20,7 @@ const GamesPage = props => {
           }
         }
       }
-      allGoogleGamesSheet {
+      allGoogleGamesSheet (sort: {order: DESC, fields: dateFinished}) {
         nodes {
           completed
           dateFinished
@@ -136,7 +137,7 @@ const GamesPage = props => {
                               <td className="text-center">
                                 {completed && <span role="img" aria-label="100% Completion" title="100% Completion">💯</span>}
                               </td>
-                              <td className="text-right">{dateFinished}</td>
+                              <td className="text-right">{dayjs(dateFinished).format('MMM D, YYYY')}</td>
                               <td className="d-none d-sm-table-cell">{notes}</td>
                             </tr>
                           )
@@ -181,7 +182,7 @@ const GamesPage = props => {
                         }, index) => {
                           return dateFinished
                           // find all dates earlier than last year in tab array
-                          && parseInt(dateFinished.split(", ")[1]) < years[years.length - 1]
+                          && parseInt(dateFinished.split("-")[0]) < years[years.length - 1]
                           && (
                             <tr key={index}>
                               <td>{title}</td>
@@ -192,7 +193,7 @@ const GamesPage = props => {
                               <td className="text-center">
                                 {completed && <span role="img" aria-label="100% Completion" title="100% Completion">💯</span>}
                               </td>
-                              <td className="text-right">{dateFinished}</td>
+                              <td className="text-right">{dayjs(dateFinished).format('MMM D, YYYY')}</td>
                               <td className="d-none d-sm-table-cell">{notes}</td>
                             </tr>
                           )
