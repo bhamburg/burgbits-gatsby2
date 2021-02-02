@@ -1,6 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Container, Row, Col, Table } from "react-bootstrap"
+import dayjs from "dayjs"
 
 import Layout from "../components/layout"
 import Header from "../components/header"
@@ -16,7 +17,7 @@ const RunsPage = props => {
           }
         }
       }
-      allGoogleRunsSheet {
+      allGoogleRunsSheet (sort: {order: DESC, fields: date}) {
         nodes {
           distance
           date
@@ -56,7 +57,7 @@ const RunsPage = props => {
                     return (
                       <tr key={index}>
                         <td>{name}</td>
-                        <td>{date}</td>
+                        <td>{dayjs(date).format('MMM D, YYYY')}</td>
                         <td>{distance}</td>
                         <td className="text-right">{time}</td>
                         <td className="text-right">{paceCalculated}</td>

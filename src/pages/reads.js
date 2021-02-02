@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Container, Row, Col, Table, Tabs, Tab  } from "react-bootstrap"
+import dayjs from "dayjs"
 
 import Layout from "../components/layout"
 import Header from "../components/header"
@@ -19,9 +20,10 @@ const ReadsPage = props => {
           }
         }
       }
-      allGoogleReadsSheet {
+      allGoogleReadsSheet (sort: {order: ASC, fields: authorLastFirst}) {
         nodes {
           author
+          authorLastFirst
           addAuthors
           dateRead
           title
@@ -46,7 +48,7 @@ const ReadsPage = props => {
               <Table responsive="sm">
                   <thead>
                     <tr>
-                      <th style={{ width: '50%' }}>Title</th>
+                      <th style={{ width: '65%' }}>Title</th>
                       <th>Author(s)</th>
                     </tr>
                   </thead>
@@ -79,7 +81,7 @@ const ReadsPage = props => {
                       <Table responsive="sm">
                         <thead>
                           <tr>
-                            <th style={{ width: '50%' }}>Title</th>
+                            <th style={{ width: '65%' }}>Title</th>
                             <th>Author(s)</th>
                             <th className="text-right" width="135">Date Finished</th>
                           </tr>
@@ -97,7 +99,7 @@ const ReadsPage = props => {
                               <tr key={index}>
                                 <td>{title}</td>
                                 <td>{author}{addAuthors && (<>,<br/>{addAuthors}</>)}</td>
-                                <td className="text-right">{dateRead}</td>
+                                <td className="text-right">{dayjs(dateRead).format('MMM D, YYYY')}</td>
                               </tr>
                             )
                           })}
@@ -110,7 +112,7 @@ const ReadsPage = props => {
                     <Table responsive="sm">
                       <thead>
                         <tr>
-                          <th style={{ width: '50%' }}>Title</th>
+                          <th style={{ width: '65%' }}>Title</th>
                           <th>Author(s)</th>
                           <th className="text-right" width="135">Date Finished</th>
                         </tr>
@@ -124,12 +126,12 @@ const ReadsPage = props => {
                         }, index) => {
                           return dateRead 
                           // find all dates earlier than last year in tab array
-                          && parseInt(dateRead.split(", ")[1]) < years[years.length - 1]
+                          && parseInt(dateRead.split(", ")[0]) < years[years.length - 1]
                           && (
                             <tr key={index}>
                               <td>{title}</td>
                               <td>{author}{addAuthors && (<>,<br/>{addAuthors}</>)}</td>
-                              <td className="text-right" >{dateRead}</td>
+                              <td className="text-right" >{dayjs(dateRead).format('MMM D, YYYY')}</td>
                             </tr>
                           )
                         })}
