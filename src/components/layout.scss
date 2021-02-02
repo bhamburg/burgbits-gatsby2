@@ -82,10 +82,10 @@ html,body {
       border: none;
     }
     .navbar-nav .nav-link {
-      color: rgba(255, 255, 255, 0.75);
+      color: rgba(255, 255, 255, 1);
       font-size: 1.2rem;
-      &:hover, &:active, &.active {
-        color: rgba(255, 255, 255, 1);
+      &:hover, &:active {
+        color: rgba(255, 255, 255, .75);
       }
     }
     .navbar-brand {
@@ -126,6 +126,9 @@ html,body {
   footer {
     font-family: $jetbrains;
   }
+  .text-muted {
+    color: #999 !important;
+  }
 }
 
 // cards 
@@ -163,7 +166,7 @@ html,body {
   transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
   .card-footer {
-    color: $secondary;
+    color: theme-color("dark");
   }
 }
 .lift:hover {

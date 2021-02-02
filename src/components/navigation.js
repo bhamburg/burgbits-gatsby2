@@ -5,12 +5,12 @@ import { Nav, Navbar } from "react-bootstrap"
 
 const Navigation = ({ siteTitle }) => (
   <Navbar bg="primary" variant="dark" expand="md">
-    <Link to="/">
+    <Link to="/" aria-label="Home page">
       <Navbar.Brand>
         <span>{siteTitle}</span>
       </Navbar.Brand>
     </Link>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Navbar.Toggle aria-controls="main-nav" />
     <Navbar.Collapse id="main-nav">
       <Nav className="ml-auto">
         <Link activeClassName="active" className="nav-link" to="/now">
