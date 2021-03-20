@@ -36,7 +36,7 @@ const ReadsPage = props => {
     <SEO title="Books I'm Reading" />
     <Header 
       title="/reads"
-      text={[<em>“The more that you read, the more things you will know. The more that you learn, the more places you’ll go.”</em>,<br />,"—Dr. Seuss"]}
+      text={[<em>“The man who does not read good books is no better than the man who can’t.”</em>,<br />,"—Mark Twain"]}
       img={data.readsImage.childImageSharp.sizes}
     />
     <main>
