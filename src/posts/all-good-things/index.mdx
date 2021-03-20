@@ -15,7 +15,7 @@ You may think this post is about how I left an awesome team at Jefferson last mo
 
 If you're a nerd of a certain caliber, you'll also recognize that I've used the same title as the final episode of _Star Trek: The Next Generation_, one of my all-time favorite shows. Captain Picard is by far the best captain of the Starship Enterprise. Don't @ me.
 
-All that being said, what this post is really about is the final project I worked on in my final sprint at Jefferson: a carousel of patient testionials that is authorable in Adobe Experience Manager and utilizes a [content fragment model](https://experienceleague.adobe.com/docs/experience-manager-65/assets/fragments/content-fragments-models.html) and [Sling Models](https://sling.apache.org/documentation/bundles/models.html). Much of the following code borrows from their solution 
+All that being said, what this post is really about is the final project I worked on in my final sprint at Jefferson: a carousel of patient testionials that is authorable in Adobe Experience Manager and utilizes a [content fragment model](https://experienceleague.adobe.com/docs/experience-manager-65/assets/fragments/content-fragments-models.html) and [Sling Models](https://sling.apache.org/documentation/bundles/models.html).
 
 ## Testimonial Carousel
 
@@ -23,7 +23,7 @@ With the previously-built solution for displaying patient testimonials, content 
 
 My goal was to convert this to use a folder in the <abbr title="Digital Asset Manager">DAM</abbr> as a central repository for all testimonial content that could be referenced individually or as a group. The best candidate for the job turned out to be the AEM [Content Fragment](https://experienceleague.adobe.com/docs/experience-manager-65/assets/fragments/content-fragments.html).
 
-The best tutorial I could find for using content fragment models that I would eventually want to iterate through turned out to be in a [blog post](https://engineering.icf.com/aem-content-fragments-in-the-wild/) instead of any official Adobe documentation. 
+The best tutorial I could find for using content fragment models that I would eventually want to iterate through turned out to be in a [blog post](https://engineering.icf.com/aem-content-fragments-in-the-wild/) instead of any official Adobe documentation. Much of the code for the single content fragment model borrows from their code.
 
 ### Sling Model for Single Content Fragment
 
