@@ -9,7 +9,7 @@ import SEO from "../components/seo"
 const NowPage = props => {
   const data = useStaticQuery(graphql`
     query {
-      aboutImage: file(relativePath: { eq: "christmas-2020.jpg" }) {
+      aboutImage: file(relativePath: { eq: "lizzy-and-lou-turn-5.jpeg" }) {
         childImageSharp {
           sizes(quality: 100) {
             ...GatsbyImageSharpSizes_withWebp
@@ -32,16 +32,16 @@ const NowPage = props => {
           <Row>
             <Col xl={{ span: 8, offset: 2 }}>
               <h2>What I’m doing now</h2>
-              <p className="mb-4 h5">Last updated: January 23, 2021</p>
-              <p>Working from home for <a href="https://jeffersonhealth.org" target="_blank" rel="noopener noreferrer">Jefferson Health</a> on a few different web projects. COVID-19 has certainly made things interesting in the healthcare industry. Since my wife is a nurse practitioner and her brother is a pharmacist, we can share each of our different perspectives from inside the industry. I give all the praise and credit in the world to those folks on the front lines of this terrible disease and this challenging time in history. 😷🙏</p>
-              <p>Staying fresh with modern front-end web technologies and Adobe Experience Manager. 💻</p>
+              <p className="mb-4 h5">Last updated: March 20, 2021</p>
+              <p>Happy Spring. Lizzy and Lou turned FIVE earlier this month! We have two five-year-olds. This is crazy. Time is flying by faster than ever.</p>
+              <p>I've recently accepted a new position at the <a href="https://redcross.org" target="_blank" rel="noopener noreferrer">American Red Cross</a> as a web software engineer. It has been an honor and privilege to work alongside some of the most amazing colleagues one could ask for at Jefferson Health for the past eight years. This new position brings with it an exciting opportunity for me to grow as a developer, with a focus on the front end of the stack, still developing components for Adobe Experience Manager, and gaining additional responsibilities with much to learn on the back end.</p>
+              <p>COVID-19 has certainly made things interesting. I'm fortunate to say that I've received both vaccination shots at this time. Since my wife is a nurse practitioner and her brother is a pharmacist, we can share each of our different perspectives from inside the industry. I give all the praise and credit in the world to those folks on the front lines of this terrible disease and this challenging time in history.</p>
+              <p>Taking a proactive approach with my health and <Link to="/runs">running</Link> when I can, preparing for the 2021 Broad Street Run (10 miles), whether it is a virtual format again or hopefully in person, with a target goal of running a half marathon (13.1 miles) before my 40th birthday.</p>
+              <p>Back to playing banjo with <a href="https://www.fralinger.org" target="_blank" rel="noopener noreferrer">Fralinger</a> and <a href="http://drewgent.com" target="_blank" rel="noopener noreferrer">Drew Nugent and the Midnight Society</a> as the live gigs are just starting to pick up again!</p>
               <p><Link to="/blog">Blogging</Link> as often as I can find time to form coherent thoughts about a topic of interest.</p>
-              <p>Missing playing banjo with <a href="https://www.fralinger.org" target="_blank" rel="noopener noreferrer">Fralinger</a> and admittedly not practicing music enough. I'll eventually get back into the swing of things, but the lack of live gigs to prepare for has made it tough to stay motivated. 🪕</p>
-              <p><Link to="/runs">Running</Link> when I can, preparing for the 2021 Broad Street Run (10 miles), whether it is a virtual format again or hopefully in person, with a target goal of running a half marathon (13.1 miles) before my 40th birthday. 🏃‍♂️</p>
-              <p>Rooting for the Eagles 🏈, Sixers 🏀, Flyers 🏒, and hoping for some drastic changes for the Phillies ⚾️ in the offseason. 2008 feels like forever ago. 🏆</p>
-              <p>Starting off strong with my 2021 <Link to="/reads">reading</Link> challenge goal of 21 books. 📚</p>
-              <p><Link to="/games">Playing video games</Link>, notably on PS5 and <Link to="/cutting-edge-of-retro-gaming">MiSTer</Link>. 🕹 My tastes gravitate towards games from and inspired by the 8- and 16-bit “golden age” of pixel art. Kids can keep their Fortnite and Overwatch. Give me the “<abbr title="Nintendo Entertainment System">NES</abbr> Hard” platformers, run-and-guns, and <abbr title="role-playing games">RPGs</abbr>. I love to chat about <abbr title="cathode-ray tube">CRT</abbr> scan lines in 240p <abbr title="red-green-blue additive color model">RGB</abbr>, or the latest advances in <abbr title="field-programmable gate array">FPGA</abbr>-based systems with near-perfect accuracy and zero-to-low input latency.</p>
-              <p>Ultimately trying to balance being a father, husband, son, web professional, musician, nerd, colleague, friend, and decent human being in the crazy world we currently live in. 🌎</p>
+              <p>Starting off strong with my 2021 <Link to="/reads">reading</Link> challenge goal of 21 books.</p>
+              <p><Link to="/games">Playing video games</Link>, notably on PS5 and <Link to="/cutting-edge-of-retro-gaming">MiSTer</Link>. My tastes gravitate towards games from and inspired by the 8- and 16-bit “golden age” of pixel art. Kids can keep their Fortnite and Overwatch. Give me the “<abbr title="Nintendo Entertainment System">NES</abbr> Hard” platformers, run-and-guns, and <abbr title="role-playing games">RPGs</abbr>. I love to chat about <abbr title="cathode-ray tube">CRT</abbr> scan lines in 240p <abbr title="red-green-blue additive color model">RGB</abbr>, or the latest advances in <abbr title="field-programmable gate array">FPGA</abbr>-based systems with near-perfect accuracy and zero-to-low input latency.</p>
+              <p>Ultimately trying to balance being a father, husband, son, web professional, musician, nerd, colleague, friend, and decent human being in the crazy world we currently live in.</p>
               <p>
                 <a href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">
                   <em>What is a “now” page?</em>
