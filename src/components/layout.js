@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
         <Container className="text-center">
           <Row>
             <Col xs={12} lg={6} className="text-lg-left">
-              Contact: <a className="text-white" href="mailto:brian@burgbits.com">brian@burgbits.com</a>
+              Contact: <a className="text-white" href="mailto:bhamburg@gmail.com">bhamburg@gmail.com</a>
             </Col>
             <Col xs={12} lg={6} className="text-lg-right">
               Copyright © {new Date().getFullYear()} Brian Hamburg
