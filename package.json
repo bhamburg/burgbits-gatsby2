@@ -9,6 +9,7 @@
     "@mdx-js/react": "^1.6.4",
     "axios": ">=0.21.1",
     "bootstrap": "^4.5.0",
+    "chokidar": "^3.5.2",
     "date-fns": "^2.14.0",
     "dayjs": "^1.10.4",
     "gatsby": "^2.13.57",

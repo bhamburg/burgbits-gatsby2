@@ -55,7 +55,7 @@ html,body {
     }
   }
   .jumbotron {
-    background-color: rgba(theme-color("dark"), .9);
+    background-color: rgba(0, 0, 0, .8);
     text-align: center;
     @include media-breakpoint-up(md) {
       text-align: unset;
